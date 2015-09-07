@@ -33,6 +33,7 @@ public:
     
     void update();
     void draw();
+    void resize(); 
     void cleanup();
     
 private:

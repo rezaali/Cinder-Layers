@@ -6,15 +6,8 @@ using namespace reza::layer;
 using namespace cinder;
 using namespace std;
 
-LayerManager::LayerManager( const AppDataRef& appdata ) : mActiveLayerRef( nullptr ), mAppDataRef( appdata )
-{
-    cout << "SETUP LAYERMANAGER" << endl;
-}
-
-LayerManager::~LayerManager()
-{
-    cout << "DESTROYING LAYERMANAGER" << endl;     
-}
+LayerManager::LayerManager( const AppDataRef& appdata ) : mActiveLayerRef( nullptr ), mAppDataRef( appdata ) { }
+LayerManager::~LayerManager() { }
 
 void LayerManager::addLayer( const LayerRef& layer )
 {
@@ -86,6 +79,16 @@ void LayerManager::draw()
 {
     if( mActiveLayerRef ) {
         mActiveLayerRef->_draw();
+    }
+}
+
+void LayerManager::resize()
+{
+    for( auto &it : mLayersMap ) {
+        auto layer = it.second;
+        if( layer ->isSetup() ) {
+            layer->_resize();
+        }
     }
 }
 

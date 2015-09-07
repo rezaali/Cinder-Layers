@@ -19,6 +19,7 @@ public:
     virtual void _setup();
     virtual void _update();
     virtual void _draw();
+    virtual void _resize();
     virtual void _cleanup();
     virtual void _activate();
     virtual void _deactivate();
@@ -26,6 +27,7 @@ public:
     virtual void setup();
     virtual void update();
     virtual void draw();
+    virtual void resize();
     virtual void cleanup();
     virtual void activate();
     virtual void deactivate();

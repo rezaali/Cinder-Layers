@@ -4,15 +4,9 @@ using namespace reza::layer;
 using namespace cinder;
 using namespace std;
 
-Layer::Layer() : mManagerRef( nullptr ), mAppDataRef( nullptr ), mActive( false ), mSetup( false )
-{
-    cout << "CREATING BASE LAYER" << endl;
-}
+Layer::Layer() : mManagerRef( nullptr ), mAppDataRef( nullptr ), mActive( false ), mSetup( false ) { }
 
-Layer::~Layer()
-{
-    cout << "DESTROYING BASE LAYER" << endl;
-}
+Layer::~Layer() { }
 
 void Layer::_setup()
 {
@@ -27,6 +21,11 @@ void Layer::_update()
 void Layer::_draw()
 {
     draw();
+}
+
+void Layer::_resize()
+{
+    resize();
 }
 
 void Layer::_cleanup()
@@ -57,6 +56,11 @@ void Layer::update()
 void Layer::draw()
 {
 
+}
+
+void Layer::resize()
+{
+    
 }
 
 void Layer::cleanup()
