@@ -26,6 +26,7 @@ void LayerManager::switchLayer( string name )
             mActiveLayerRef->_deactivate();
             mActiveLayerRef->setActive( false ); 
         }
+        mActiveLayerRef = nullptr; 
     }
    
     auto it = mLayersMap.find( name );
@@ -37,6 +38,7 @@ void LayerManager::switchLayer( string name )
         {
             layer->_setup();
             layer->setSetup( true );
+            layer->_update();
         }
         layer->_activate();
         layer->setActive( true );

@@ -38,8 +38,8 @@ public:
     
 private:
     std::map< std::string, LayerRef > mLayersMap;
-    LayerRef mActiveLayerRef;
-    AppDataRef mAppDataRef;
+    LayerRef mActiveLayerRef = nullptr;
+    AppDataRef mAppDataRef = nullptr; 
 };
 
 } } //namespace reza::layer
